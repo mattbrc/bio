@@ -11,7 +11,7 @@ export default async function Projects() {
 
           <MonoCard title="AG Studio">
             <p>
-              Cool fitness app. 500+ subs, stripe integration,
+              Cool fitness app. 700+ subs, stripe integration,
               nextjs/ts/mysql/drizzle/trpc
             </p>
             <Link
