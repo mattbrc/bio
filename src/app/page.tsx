@@ -11,6 +11,7 @@ import MonoBadge from "@/components/mono-badge";
 import { List, ListItem } from "@/components/mono-list";
 import MonoTable from "@/components/mono-table";
 import MonoFooter from "@/components/mono-footer";
+import Link from "next/link";
 
 export default async function Home() {
   return (
@@ -27,7 +28,25 @@ export default async function Home() {
           subtitle="Falcon 9, 08-04-2024"
         />
         <div className="mt-4 flex flex-col gap-4">
-          <MonoCard title="Current">Loading...</MonoCard>
+          <MonoCard title="About">
+            Originally an electrical engineer now running a software program for
+            the DoD. Affinity for building software and solving problems w/ real
+            business value. Currently building a{" "}
+            <Link
+              className="text-emerald-400 underline hover:text-emerald-600"
+              href="https://useintegraterx.com"
+            >
+              healthcare app
+            </Link>{" "}
+            in my free time and running a fitness biz called{" "}
+            <Link
+              className="text-emerald-400 underline hover:text-emerald-600"
+              href="https://instagram.com/acidgambit"
+            >
+              Acid Gambit
+            </Link>
+            .
+          </MonoCard>
 
           <MonoCard title="Work">
             Technical Program Manager: Lead the Army Organization Server
