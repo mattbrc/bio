@@ -28,10 +28,9 @@ export default async function Home() {
           subtitle="Falcon 9, 08-04-2024"
         />
         <div className="mt-4 flex flex-col gap-4">
-          <MonoCard title="About">
+          <MonoCard title="Current">
             Originally an electrical engineer now running a software program for
-            the DoD. Affinity for building software and solving problems w/ real
-            business value. Currently building a{" "}
+            the DoD. Currently building a{" "}
             <Link
               className="text-emerald-400 underline hover:text-emerald-600"
               href="https://useintegraterx.com"
