@@ -39,9 +39,12 @@ export default async function Home() {
           <MonoCard title="Stack">
             <List>
               <ListItem>Frontend: Next, React</ListItem>
-              <ListItem>Backend: tRPC, Drizzle, Prisma</ListItem>
-              <ListItem>Languages: TypeScript, Python, Go</ListItem>
-              <ListItem>Other: MySQL, Postgres, Tailwind, Solidity</ListItem>
+              <ListItem>Backend: tRPC, Drizzle, FastAPI, Redis</ListItem>
+              <ListItem>Languages: TypeScript, Python</ListItem>
+              <ListItem>DevOps: AWS, SST, CI/CD</ListItem>
+              <ListItem>
+                Other: Postgres, MySQL, Solidity, Tailwind, PostHog
+              </ListItem>
             </List>
           </MonoCard>
           <Stats />
