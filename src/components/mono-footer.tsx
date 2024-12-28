@@ -14,13 +14,13 @@ export default function MonoFooter() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 items-center z-50 border-neutral-950 bg-neutral-50 font-mono">
+    <nav className="sticky top-0 items-center z-50 border-neutral-950 bg-[#EEE7E3] font-mono">
       <div className="flex h-8 items-center justify-center gap-1 px-4">
         {navItems.map((item) => (
           <Link
             key={item.href}
             href={item.href}
-            className={`flex h-6 items-center border border-transparent px-3 text-sm transition-colors hover:border-neutral-950 hover:bg-neutral-100 ${
+            className={`flex h-6 items-center border border-transparent px-3 text-sm transition-colors hover:bg-gray-800 hover:text-white ${
               pathname === item.href ? "border-neutral-950 bg-neutral-100" : ""
             }`}
           >

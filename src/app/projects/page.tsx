@@ -9,16 +9,16 @@ export default async function Projects() {
         <div className="flex flex-col gap-4">
           <MonoHeader title="Projects" />
 
-          <MonoCard title="AG Studio">
+          <MonoCard title="RxReinvented">
             <p>
-              Cool fitness app. 700+ subs, stripe integration,
-              nextjs/ts/mysql/drizzle/trpc
+              Designing and building a marketing centric electronic health
+              record.
             </p>
             <Link
               className="underline underline-offset-1 text-sm font-mono text-slate-600"
-              href="https://app.acidgambit.com"
+              href="https://github.com/mattbrc/rxr"
             >
-              app.acidgambit.com
+              github
             </Link>
           </MonoCard>
 
@@ -34,6 +34,19 @@ export default async function Projects() {
               href="https://github.com/mattbrc/integrateRx"
             >
               github
+            </Link>
+          </MonoCard>
+
+          <MonoCard title="AG Studio">
+            <p>
+              Cool fitness app. 700+ subs, stripe integration,
+              nextjs/ts/mysql/drizzle/trpc
+            </p>
+            <Link
+              className="underline underline-offset-1 text-sm font-mono text-slate-600"
+              href="https://app.acidgambit.com"
+            >
+              app.acidgambit.com
             </Link>
           </MonoCard>
 

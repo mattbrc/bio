@@ -7,20 +7,44 @@ import MonoCard from "@/components/mono-card";
 import MonoTable from "@/components/mono-table";
 import MonoBadge from "@/components/mono-badge";
 
+function calculatePace(distance: number, time: number): string {
+  // Only calculate pace for runs and walks
+  if (distance === 0) return "—";
+
+  // Convert meters to miles and seconds to minutes
+  const miles = distance / 1609.34;
+  const minutes = time / 60;
+
+  // Calculate pace (minutes per mile)
+  const pace = minutes / miles;
+
+  // Format to mm:ss
+  const paceMinutes = Math.floor(pace);
+  const paceSeconds = Math.floor((pace - paceMinutes) * 60);
+
+  return `${paceMinutes}:${paceSeconds.toString().padStart(2, "0")}`;
+}
+
 export default async function Recents() {
   let activities: Activity[] = [];
-  let data = [["NAME", "TYPE", "DISTANCE", "TIME", "DATE"]]; // Header row
+  let data = [["NAME", "TYPE", "PACE", "DISTANCE", "TIME", "DATE"]]; // Added PACE header
 
   try {
     activities = await getRecentActivities(5);
 
     if (activities.length > 0) {
       activities.forEach((activity) => {
+        const pace =
+          activity.type === "Run" || activity.type === "Walk"
+            ? calculatePace(activity.distance, activity.moving_time)
+            : "—";
+
         data.push([
           activity.name,
           activity.type === "WeightTraining"
             ? "Weight Training"
             : activity.type,
+          pace,
           `${(activity.distance / 1609.34).toFixed(2)} mi`,
           formatTime(activity.moving_time),
           new Date(activity.start_date_local).toLocaleString(),

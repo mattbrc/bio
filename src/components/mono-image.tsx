@@ -17,7 +17,7 @@ export default function MonoImage({
   subtitle,
 }: MonoImageProps) {
   return (
-    <div className="">
+    <div>
       <Image
         src={src}
         alt={alt}
