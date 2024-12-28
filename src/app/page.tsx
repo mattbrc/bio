@@ -1,3 +1,5 @@
+import React from "react";
+
 export const dynamic = "force-dynamic";
 
 import Image from "next/image";
@@ -12,6 +14,29 @@ import { List, ListItem } from "@/components/mono-list";
 import MonoTable from "@/components/mono-table";
 import MonoFooter from "@/components/mono-footer";
 import Link from "next/link";
+
+const stackItems = [
+  {
+    category: "Frontend",
+    items: "Next, React",
+  },
+  {
+    category: "Backend",
+    items: "tRPC, Drizzle, FastAPI, Redis",
+  },
+  {
+    category: "Languages",
+    items: "TypeScript, Python",
+  },
+  {
+    category: "DevOps",
+    items: "AWS, SST, CI/CD",
+  },
+  {
+    category: "Other",
+    items: "Postgres, MySQL, Solidity, Tailwind, PostHog",
+  },
+] as const;
 
 export default async function Home() {
   return (
@@ -55,15 +80,19 @@ export default async function Home() {
             tools (angular/node, MS Access, VBA) and engineering enhancements.
           </MonoCard>
           <MonoCard title="Stack">
-            <List>
-              <ListItem>Frontend: Next, React</ListItem>
-              <ListItem>Backend: tRPC, Drizzle, FastAPI, Redis</ListItem>
-              <ListItem>Languages: TypeScript, Python</ListItem>
-              <ListItem>DevOps: AWS, SST, CI/CD</ListItem>
-              <ListItem>
-                Other: Postgres, MySQL, Solidity, Tailwind, PostHog
-              </ListItem>
-            </List>
+            <div className="grid grid-cols-[auto_1fr] gap-y-1 font-mono text-sm">
+              {stackItems.map(({ category, items }) => (
+                <React.Fragment key={category}>
+                  <div className="flex items-center pr-2">
+                    <span className="mr-2">→</span>
+                    <span>{category}:</span>
+                  </div>
+                  <div className="flex items-start rounded transition-colors hover:bg-emerald-400 cursor-pointer px-2">
+                    {items}
+                  </div>
+                </React.Fragment>
+              ))}
+            </div>
           </MonoCard>
           <Stats />
           <Recents />
