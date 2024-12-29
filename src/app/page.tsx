@@ -4,7 +4,6 @@ export const dynamic = "force-dynamic";
 
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
-import Stats from "./_components/stats";
 import Recents from "./_components/recents";
 import MonoCard from "@/components/mono-card";
 import MonoImage from "@/components/mono-image";
@@ -14,6 +13,9 @@ import { List, ListItem } from "@/components/mono-list";
 import MonoTable from "@/components/mono-table";
 import MonoFooter from "@/components/mono-footer";
 import Link from "next/link";
+import { getActivitiesData } from "@/lib/strava";
+import ActivityHeatmap from "./_components/activity-heatmap";
+import { unstable_cache } from "next/cache";
 
 const stackItems = [
   {
@@ -38,13 +40,24 @@ const stackItems = [
   },
 ] as const;
 
+const cachedActivitiesData = unstable_cache(
+  async () => {
+    return getActivitiesData(180);
+  },
+  ["strava-activities"],
+  {
+    revalidate: 3600, // Cache for 1 hour
+    tags: ["strava"],
+  }
+);
+
 export default async function Home() {
+  // Fetch activities data with caching
+  const activitiesData = await cachedActivitiesData();
+
   return (
     <main className="flex flex-col items-center w-full pt-2 pb-8">
       <div className="max-w-[650px] w-full px-4 sm:px-6 md:px-8">
-        {/* <div className="mb-4">
-          <MonoHeader title="Matt Wilder" />
-        </div> */}
         <MonoImage
           src="/spacex2.jpeg"
           alt="Profile"
@@ -94,8 +107,8 @@ export default async function Home() {
               ))}
             </div>
           </MonoCard>
-          <Stats />
-          <Recents />
+          <ActivityHeatmap activities={activitiesData.recentActivities} />
+          <Recents activities={activitiesData.recentActivities} />
         </div>
       </div>
     </main>
