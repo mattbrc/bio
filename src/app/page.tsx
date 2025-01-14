@@ -66,32 +66,15 @@ export default async function Home() {
           subtitle="Falcon 9, 08-04-2024"
         />
         <div className="mt-4 flex flex-col gap-4">
-          <MonoCard title="Current">
-            Originally an electrical engineer now running a software program for
-            the DoD. Currently building a{" "}
-            <Link
-              className="text-emerald-400 underline hover:text-emerald-600"
-              href="https://useintegraterx.com"
-            >
-              healthcare app
-            </Link>{" "}
-            in my free time and running a fitness biz called{" "}
-            <Link
-              className="text-emerald-400 underline hover:text-emerald-600"
-              href="https://instagram.com/acidgambit"
-            >
-              Acid Gambit
-            </Link>
-            .
-          </MonoCard>
+          <MonoCard title="Current">Intern @ Anduril</MonoCard>
 
-          <MonoCard title="Work">
+          {/* <MonoCard title="Work">
             Technical Program Manager: Lead the Army Organization Server
             program, a data feed serving over 1 million end users. Partner with
             developers and analytics teams to enhance product features, optimize
             processes, and improve data accuracy by building internal analytics
             tools (angular/node, MS Access, VBA) and engineering enhancements.
-          </MonoCard>
+          </MonoCard> */}
           <MonoCard title="Stack">
             <div className="grid grid-cols-[auto_1fr] gap-y-1 font-mono text-sm">
               {stackItems.map(({ category, items }) => (
