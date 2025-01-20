@@ -28,7 +28,7 @@ const stackItems = [
   },
   {
     category: "Languages",
-    items: "TypeScript, Python",
+    items: "TypeScript, Python, Solidity",
   },
   {
     category: "DevOps",
@@ -36,7 +36,8 @@ const stackItems = [
   },
   {
     category: "Other",
-    items: "Postgres, MySQL, Solidity, Tailwind, PostHog",
+    items:
+      "Postgres, MySQL, Solidity, Tailwind, PostHog, Datadog, Palantir, tmux",
   },
 ] as const;
 
