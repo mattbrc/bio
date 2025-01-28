@@ -40,7 +40,10 @@ export default function Stats({ stats }: StatsProps) {
   return (
     <MonoCard title="30d Stats">
       <MonoTable data={data} />
-      <MonoBadge value="strava api v3" />
+      <MonoBadge
+        value="strava api v3"
+        link="https://developers.strava.com/docs/reference/"
+      />
     </MonoCard>
   );
 }

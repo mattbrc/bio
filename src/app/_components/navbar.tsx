@@ -1,6 +1,6 @@
 export function Navbar() {
   return (
-    <header className="flex justify-center w-full">
+    <header className="flex justify-center w-full pt-2">
       <div className="max-w-[650px] w-full px-4 sm:px-6 md:px-8">
         <div className="py-2 w-full flex justify-between items-end tracking-tighter">
           <div className="font-mono text-sm font-medium">

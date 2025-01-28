@@ -66,7 +66,10 @@ export default function Recents({ activities }: RecentsProps) {
     <div>
       <MonoCard title="Recent Activities">
         <MonoTable data={data} />
-        <MonoBadge value="strava api v3" />
+        <MonoBadge
+          value="strava api v3"
+          link="https://developers.strava.com/docs/reference/"
+        />
       </MonoCard>
     </div>
   );
