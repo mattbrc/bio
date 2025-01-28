@@ -14,7 +14,7 @@ export default function MonoFooter() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 items-center z-50 border-neutral-950 bg-[#EEE7E3] font-mono">
+    <nav className="sticky top-0 items-center z-50 border-neutral-950 bg-[#EEE7E3] font-mono pb-8">
       <div className="flex h-8 items-center justify-center gap-1 px-4">
         {navItems.map((item) => (
           <Link

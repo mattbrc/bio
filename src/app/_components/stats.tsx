@@ -8,10 +8,9 @@ import MonoBadge from "@/components/mono-badge";
 
 interface StatsProps {
   stats: AthleteStats;
-  walkDuration: number | null;
 }
 
-export default function Stats({ stats, walkDuration }: StatsProps) {
+export default function Stats({ stats }: StatsProps) {
   let data = [["NAME", "COUNT", "DISTANCE", "HOURS"]]; // Header row
 
   // Add runs data
@@ -31,15 +30,15 @@ export default function Stats({ stats, walkDuration }: StatsProps) {
   ]);
 
   // Add walks data
-  data.push([
-    "Walks",
-    "—",
-    "—",
-    walkDuration === null ? "—" : `${(walkDuration / 3600).toFixed(2)}`,
-  ]);
+  // data.push([
+  //   "Walks",
+  //   "—",
+  //   "—",
+  //   walkDuration === null ? "—" : `${(walkDuration / 3600).toFixed(2)}`,
+  // ]);
 
   return (
-    <MonoCard title="Stats">
+    <MonoCard title="30d Stats">
       <MonoTable data={data} />
       <MonoBadge value="strava api v3" />
     </MonoCard>

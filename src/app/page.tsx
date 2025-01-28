@@ -13,9 +13,10 @@ import { List, ListItem } from "@/components/mono-list";
 import MonoTable from "@/components/mono-table";
 import MonoFooter from "@/components/mono-footer";
 import Link from "next/link";
-import { getActivitiesData } from "@/lib/strava";
+import { getAthleteStats, getRecentActivities } from "@/lib/strava";
 import ActivityHeatmap from "./_components/activity-heatmap";
 import { unstable_cache } from "next/cache";
+import Stats from "./_components/stats";
 
 const stackItems = [
   {
@@ -36,16 +37,23 @@ const stackItems = [
   },
   {
     category: "Other",
-    items:
-      "Postgres, MySQL, Solidity, Tailwind, PostHog, Datadog, Palantir, tmux",
+    items: "Postgres, MySQL, Tailwind, PostHog, Datadog, Palantir, Sentry",
   },
 ] as const;
 
-const cachedActivitiesData = unstable_cache(
+const cachedStravaData = unstable_cache(
   async () => {
-    return getActivitiesData(180);
+    const [activitiesData, stats] = await Promise.all([
+      getRecentActivities(),
+      getAthleteStats(),
+    ]);
+
+    return {
+      activities: activitiesData,
+      stats,
+    };
   },
-  ["strava-activities"],
+  ["strava-data"],
   {
     revalidate: 3600, // Cache for 1 hour
     tags: ["strava"],
@@ -53,8 +61,8 @@ const cachedActivitiesData = unstable_cache(
 );
 
 export default async function Home() {
-  // Fetch activities data with caching
-  const activitiesData = await cachedActivitiesData();
+  // Fetch all data with caching
+  const stravaData = await cachedStravaData();
 
   return (
     <main className="flex flex-col items-center w-full pt-2 pb-8">
@@ -67,7 +75,7 @@ export default async function Home() {
           subtitle="Falcon 9, 08-04-2024"
         />
         <div className="mt-4 flex flex-col gap-4">
-          <MonoCard title="Current">Intern @ Anduril</MonoCard>
+          <MonoCard title="Current">Mission Success @ Anduril</MonoCard>
 
           {/* <MonoCard title="Work">
             Technical Program Manager: Lead the Army Organization Server
@@ -91,8 +99,8 @@ export default async function Home() {
               ))}
             </div>
           </MonoCard>
-          <ActivityHeatmap activities={activitiesData.recentActivities} />
-          <Recents activities={activitiesData.recentActivities} />
+          <Stats stats={stravaData.stats} />
+          <Recents activities={stravaData.activities} />
         </div>
       </div>
     </main>
