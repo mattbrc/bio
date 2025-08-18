@@ -38,7 +38,7 @@ const stackItems = [
   },
   {
     category: "Other",
-    items: "Postgres, Tailwind, Datadog, Palantir, Sentry",
+    items: "Postgres, Node-cron, Lambda, Tailwind, Datadog, Palantir, Sentry",
   },
 ] as const;
 
