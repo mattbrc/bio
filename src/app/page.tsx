@@ -17,6 +17,7 @@ import { getAthleteStats, getRecentActivities } from "@/lib/strava";
 import ActivityHeatmap from "./_components/activity-heatmap";
 import { unstable_cache } from "next/cache";
 import Stats from "./_components/stats";
+import PreviousWork from "./_components/previous-work";
 
 const stackItems = [
   {
@@ -25,19 +26,19 @@ const stackItems = [
   },
   {
     category: "Backend",
-    items: "tRPC, Drizzle, FastAPI, Redis",
+    items: "C#, .NET, tRPC, Drizzle, FastAPI",
   },
   {
     category: "Languages",
-    items: "TypeScript, Python, Solidity",
+    items: "TypeScript, C#, Python, Solidity",
   },
   {
     category: "DevOps",
-    items: "AWS, SST, CI/CD",
+    items: "AWS CDK, SST, PM2, Docker",
   },
   {
     category: "Other",
-    items: "Postgres, MySQL, Tailwind, PostHog, Datadog, Palantir, Sentry",
+    items: "Postgres, Tailwind, Datadog, Palantir, Sentry",
   },
 ] as const;
 
@@ -75,7 +76,10 @@ export default async function Home() {
           subtitle="Falcon 9, 08-04-2024"
         />
         <div className="mt-4 flex flex-col gap-4">
-          <MonoCard title="Current">Mission Success @ Anduril</MonoCard>
+          <MonoCard title="Current">
+            Founding Engineer @{" "}
+            <MonoBadge value="EMRG" link="https://joinemrg.com" />
+          </MonoCard>
 
           {/* <MonoCard title="Work">
             Technical Program Manager: Lead the Army Organization Server
@@ -99,6 +103,7 @@ export default async function Home() {
               ))}
             </div>
           </MonoCard>
+          <PreviousWork />
           <Stats stats={stravaData.stats} />
           <Recents activities={stravaData.activities} />
         </div>
