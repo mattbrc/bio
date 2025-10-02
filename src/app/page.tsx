@@ -22,11 +22,11 @@ import PreviousWork from "./_components/previous-work";
 const stackItems = [
   {
     category: "Frontend",
-    items: "Next, React",
+    items: "TS, React, React Native",
   },
   {
     category: "Backend",
-    items: "C#, .NET, tRPC, Drizzle, FastAPI",
+    items: "C#, .NET, Node, tRPC, Drizzle, FastAPI",
   },
   {
     category: "Languages",
@@ -34,7 +34,7 @@ const stackItems = [
   },
   {
     category: "DevOps",
-    items: "AWS CDK, SST, PM2, Docker",
+    items: "Docker, AWS CDK, SST, PM2",
   },
   {
     category: "Other",
