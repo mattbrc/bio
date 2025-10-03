@@ -11,13 +11,14 @@ interface StatsProps {
 }
 
 export default function Stats({ stats }: StatsProps) {
-  let data = [["NAME", "COUNT", "DISTANCE", "HOURS"]]; // Header row
+  let data = [["NAME", "COUNT", "DISTANCE", "MILES PER WEEK", "HOURS"]]; // Header row
 
   // Add runs data
   data.push([
     "Runs",
     stats.recent_run_totals.count.toString(),
     `${(stats.recent_run_totals.distance / 1609).toFixed(2)} mi`,
+    `${(stats.recent_run_totals.distance / 1609 / 4).toFixed(2)} mi`,
     `${(stats.recent_run_totals.moving_time / 3600).toFixed(2)}`,
   ]);
 
@@ -26,6 +27,7 @@ export default function Stats({ stats }: StatsProps) {
     "Rides",
     stats.recent_ride_totals.count.toString(),
     `${(stats.recent_ride_totals.distance / 1609).toFixed(2)} mi`,
+    `${(stats.recent_ride_totals.distance / 1609 / 4).toFixed(2)} mi`,
     `${(stats.recent_ride_totals.moving_time / 3600).toFixed(2)}`,
   ]);
 

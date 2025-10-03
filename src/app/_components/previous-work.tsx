@@ -29,7 +29,10 @@ export default function PreviousWork() {
     <MonoCard title="Previous Work">
       <div className="font-mono text-sm space-y-3">
         {workHistory.map((job, index) => (
-          <div key={index} className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-2">
+          <div
+            key={index}
+            className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-2 transition-colors hover:bg-emerald-400 cursor-crosshair px-1"
+          >
             <div className="flex flex-col sm:flex-row sm:gap-2">
               <span className="font-semibold">{job.company}</span>
               <span className="hidden sm:inline text-neutral-600">•</span>

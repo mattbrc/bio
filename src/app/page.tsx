@@ -77,8 +77,22 @@ export default async function Home() {
         />
         <div className="mt-4 flex flex-col gap-4">
           <MonoCard title="Current">
-            Founding Engineer @{" "}
-            <MonoBadge value="EMRG" link="https://joinemrg.com" />
+            <div className="space-y-1">
+              <div>Built:</div>
+              <div>
+                - <MonoBadge value="EMRG" link="https://joinemrg.com" /> EHR
+                Platform for clinics to run their entire practice.
+              </div>
+              <div>
+                -{" "}
+                <MonoBadge
+                  value="IntegrateRx"
+                  link="https://useintegraterx.com"
+                />{" "}
+                Platform for orthopedic practices to deliver custom compounded
+                protocols to improve patient outcomes.
+              </div>
+            </div>
           </MonoCard>
 
           {/* <MonoCard title="Work">
@@ -96,7 +110,7 @@ export default async function Home() {
                     <span className="mr-2">→</span>
                     <span>{category}:</span>
                   </div>
-                  <div className="flex items-start rounded transition-colors hover:bg-emerald-400 cursor-pointer px-2">
+                  <div className="flex items-start rounded transition-colors hover:bg-emerald-400 cursor-crosshair px-2">
                     {items}
                   </div>
                 </React.Fragment>
