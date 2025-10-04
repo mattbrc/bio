@@ -10,21 +10,6 @@ export function Footer() {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://linkedin.com/in/mattwilder1"
-          >
-            linkedin
-          </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            className="acid text-sm font-medium hover:underline underline-offset-4"
-            href="https://instagram.com/acidgambit"
-          >
-            ig
-          </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
             className="acid text-sm font-medium hover:underline underline-offset-4"
             href="https://x.com/acidgambit_"
           >
@@ -37,6 +22,21 @@ export function Footer() {
             href="https://github.com/mattbrc"
           >
             github
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://linkedin.com/in/mattwilder1"
+          >
+            linkedin
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className="acid text-sm font-medium hover:underline underline-offset-4"
+            href="https://instagram.com/acidgambit"
+          >
+            ig
           </a>
         </div>
       </div>
