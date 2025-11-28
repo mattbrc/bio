@@ -78,7 +78,7 @@ export default async function Home() {
         <div className="mt-4 flex flex-col gap-4">
           <MonoCard title="Current">
             <div className="space-y-1">
-              <div>Built:</div>
+              <div>Scaling:</div>
               <div>
                 - <MonoBadge value="EMRG" link="https://joinemrg.com" /> EHR
                 Platform for clinics to run their entire practice.
