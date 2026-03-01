@@ -9,16 +9,26 @@ export default async function Projects() {
         <div className="flex flex-col gap-4">
           <MonoHeader title="Projects" />
 
-          <MonoCard title="RxReinvented">
+          <MonoCard title="AG Rx Health">
+            <p>Premium telehealth clinic built with EMRG platform</p>
+            <Link
+              className="underline underline-offset-1 text-sm font-mono text-slate-600"
+              href="https://agrxhealth.com"
+            >
+              agrxhealth.com
+            </Link>
+          </MonoCard>
+
+          <MonoCard title="EMRG">
             <p>
-              Designing and building a marketing centric electronic health
-              record.
+              Designed and built a marketing centric electronic health record w/
+              white label provider group capability.
             </p>
             <Link
               className="underline underline-offset-1 text-sm font-mono text-slate-600"
-              href="https://github.com/mattbrc/rxr"
+              href="https://joinemrg.com"
             >
-              github
+              joinemrg.com
             </Link>
           </MonoCard>
 
@@ -31,9 +41,9 @@ export default async function Projects() {
             </p>
             <Link
               className="underline underline-offset-1 text-sm font-mono text-slate-600"
-              href="https://github.com/mattbrc/integrateRx"
+              href="https://useintegraterx.com"
             >
-              github
+              useintegraterx.com
             </Link>
           </MonoCard>
 
