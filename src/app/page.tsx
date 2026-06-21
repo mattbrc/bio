@@ -81,8 +81,8 @@ export default async function Home() {
               <div>Scaling:</div>
               <div>
                 - <MonoBadge value="RxRelay" link="https://rxrelay.ai" />{" "}
-                Simplified direct-compounding-phamacy eRx workflows. Full
-                ai-enabled bulk order workflows. External partner api.
+                Simplified direct-compounding-phamacy eRx. Full ai-enabled bulk
+                order workflows. External partner api.
               </div>
               <div>
                 - <MonoBadge value="EMRG" link="https://joinemrg.com" />{" "}
