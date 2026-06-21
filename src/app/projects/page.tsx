@@ -9,6 +9,20 @@ export default async function Projects() {
         <div className="flex flex-col gap-4">
           <MonoHeader title="Projects" />
 
+          <MonoCard title="RxRelay">
+            <p>
+              RxRelay is a platform for healthcare providers to deliver
+              compounded medications to their patients with real time order
+              tracking, integrated billing, and ai enabled bulk order workflows.
+            </p>
+            <Link
+              className="underline underline-offset-1 text-sm font-mono text-slate-600"
+              href="https://rxrelay.ai"
+            >
+              rxrelay.ai
+            </Link>
+          </MonoCard>
+
           <MonoCard title="AG Rx Health">
             <p>Premium telehealth clinic built with EMRG platform</p>
             <Link

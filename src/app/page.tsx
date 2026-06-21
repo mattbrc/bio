@@ -22,11 +22,11 @@ import PreviousWork from "./_components/previous-work";
 const stackItems = [
   {
     category: "Frontend",
-    items: "TS, React, React Native",
+    items: "TS, React, Swift, React Native",
   },
   {
     category: "Backend",
-    items: "C#, .NET, Node, tRPC, Drizzle, FastAPI",
+    items: "C#, .NET, Node",
   },
   {
     category: "Languages",
@@ -34,11 +34,11 @@ const stackItems = [
   },
   {
     category: "DevOps",
-    items: "Docker, AWS CDK, SST, PM2",
+    items: "Docker, AWS, CDK, SST, PM2",
   },
   {
     category: "Other",
-    items: "Postgres, Node-cron, Lambda, Tailwind, Datadog, Palantir, Sentry",
+    items: "Postgres, Node-cron, Tailwind, Datadog, Palantir, Sentry",
   },
 ] as const;
 
@@ -80,17 +80,14 @@ export default async function Home() {
             <div className="space-y-1">
               <div>Scaling:</div>
               <div>
-                - <MonoBadge value="EMRG" link="https://joinemrg.com" /> EHR
-                Platform for clinics to run their entire practice.
+                - <MonoBadge value="RxRelay" link="https://rxrelay.ai" />{" "}
+                Simplified direct-compounding-phamacy eRx workflows. Full
+                ai-enabled bulk order workflows. External partner api.
               </div>
               <div>
-                -{" "}
-                <MonoBadge
-                  value="IntegrateRx"
-                  link="https://useintegraterx.com"
-                />{" "}
-                Platform for orthopedic practices to deliver custom compounded
-                protocols to improve patient outcomes.
+                - <MonoBadge value="EMRG" link="https://joinemrg.com" />{" "}
+                Platform for clinics to run their entire practice. White label
+                provider group, billing, scheduling, patient management.
               </div>
             </div>
           </MonoCard>

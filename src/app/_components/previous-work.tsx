@@ -3,6 +3,11 @@ import MonoCard from "@/components/mono-card";
 
 const workHistory = [
   {
+    company: "FortyAU",
+    role: "Senior Software Engineer",
+    period: "Nov 2025 - Present",
+  },
+  {
     company: "Anduril Industries",
     role: "Mission Success Intern",
     period: "Jan 2025 - May 2025",
