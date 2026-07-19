@@ -4,7 +4,7 @@ export const dynamic = "force-dynamic";
 
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
-import Recents from "./_components/recents";
+// import Recents from "./_components/recents";
 import MonoCard from "@/components/mono-card";
 import MonoImage from "@/components/mono-image";
 import MonoHeader from "@/components/mono-header";
@@ -13,10 +13,11 @@ import { List, ListItem } from "@/components/mono-list";
 import MonoTable from "@/components/mono-table";
 import MonoFooter from "@/components/mono-footer";
 import Link from "next/link";
-import { getAthleteStats, getRecentActivities } from "@/lib/strava";
-import ActivityHeatmap from "./_components/activity-heatmap";
-import { unstable_cache } from "next/cache";
-import Stats from "./_components/stats";
+// Strava integration disabled: Strava moved to paid API access and the app is now Inactive.
+// import { getAthleteStats, getRecentActivities } from "@/lib/strava";
+// import ActivityHeatmap from "./_components/activity-heatmap";
+// import { unstable_cache } from "next/cache";
+// import Stats from "./_components/stats";
 import PreviousWork from "./_components/previous-work";
 
 const stackItems = [
@@ -42,29 +43,28 @@ const stackItems = [
   },
 ] as const;
 
-const cachedStravaData = unstable_cache(
-  async () => {
-    const [activitiesData, stats] = await Promise.all([
-      getRecentActivities(),
-      getAthleteStats(),
-    ]);
-
-    return {
-      activities: activitiesData,
-      stats,
-    };
-  },
-  ["strava-data"],
-  {
-    revalidate: 3600, // Cache for 1 hour
-    tags: ["strava"],
-  }
-);
+// Strava integration disabled — Strava moved to paid API access, so the app is
+// Inactive and all data calls return 403. Re-enable once a paid plan is in place.
+// const cachedStravaData = unstable_cache(
+//   async () => {
+//     const [activitiesData, stats] = await Promise.all([
+//       getRecentActivities(),
+//       getAthleteStats(),
+//     ]);
+//
+//     return {
+//       activities: activitiesData,
+//       stats,
+//     };
+//   },
+//   ["strava-data"],
+//   {
+//     revalidate: 3600, // Cache for 1 hour
+//     tags: ["strava"],
+//   }
+// );
 
 export default async function Home() {
-  // Fetch all data with caching
-  const stravaData = await cachedStravaData();
-
   return (
     <main className="flex flex-col items-center w-full pt-2 pb-8">
       <div className="max-w-[650px] w-full px-4 sm:px-6 md:px-8">
@@ -115,8 +115,9 @@ export default async function Home() {
             </div>
           </MonoCard>
           <PreviousWork />
+          {/* Strava widgets disabled — Strava API now requires a paid plan.
           <Stats stats={stravaData.stats} />
-          <Recents activities={stravaData.activities} />
+          <Recents activities={stravaData.activities} /> */}
         </div>
       </div>
     </main>
