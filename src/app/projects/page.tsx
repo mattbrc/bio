@@ -9,6 +9,35 @@ export default async function Projects() {
         <div className="flex flex-col gap-4">
           <MonoHeader title="Projects" />
 
+          <MonoCard title="Cadence Intel">
+            <p>
+              Building applied AI for the contracting community and DoW.
+              Ultimately reduce time spent across document creation, simplify
+              workflows, reduce complexity (and errors) across all participants.
+            </p>
+            <Link
+              className="underline underline-offset-1 text-sm font-mono text-slate-600"
+              href="https://www.cadenceintel.ai/"
+            >
+              cadenceintel.ai
+            </Link>
+          </MonoCard>
+          <MonoCard title="40AU (Senior Software Engineer)">
+            <p>
+              Lead an eng team (x6) on rebuild of large scale partnership tax
+              platform for a Big 4 accounting firm.
+            </p>
+            <p>
+              Led, designed and built a high perf allocation system for large
+              scale tax processing workflows for a Big 4 accounting firm.
+            </p>
+            <Link
+              className="underline underline-offset-1 text-sm font-mono text-slate-600"
+              href="https://www.fortyau.com"
+            >
+              fortyau.com
+            </Link>
+          </MonoCard>
           <MonoCard title="RxRelay">
             <p>
               RxRelay is a platform for healthcare providers to deliver
@@ -46,7 +75,7 @@ export default async function Projects() {
             </Link>
           </MonoCard>
 
-          <MonoCard title="IntegrateRx">
+          <MonoCard title="FormationRx">
             <p>
               Designing and building webapp to connect clinics and pharmacies
               for compounding therapies while integrating with the largest
@@ -55,9 +84,9 @@ export default async function Projects() {
             </p>
             <Link
               className="underline underline-offset-1 text-sm font-mono text-slate-600"
-              href="https://useintegraterx.com"
+              href="https://formationrx.com"
             >
-              useintegraterx.com
+              formationrx.com
             </Link>
           </MonoCard>
 

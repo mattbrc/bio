@@ -5,11 +5,11 @@ const workHistory = [
   {
     company: "FortyAU",
     role: "Senior Software Engineer",
-    period: "Nov 2025 - Present",
+    period: "Nov 2025 - Aug 2026",
   },
   {
     company: "Anduril Industries",
-    role: "Mission Success Intern",
+    role: "Skillbridge Intern",
     period: "Jan 2025 - May 2025",
   },
   {
